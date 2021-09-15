@@ -1,14 +1,16 @@
 package Pojos;
 
 import lombok.*;
+import org.junit.Ignore;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(exclude = {"id"})
 
 public class CreateUserResponse {
-    private Integer id;
+    private Long id;
     private String username;
     private String firstName;
     private String lastName;

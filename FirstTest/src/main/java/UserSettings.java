@@ -1,8 +1,11 @@
 import Pojos.CreateUser;
 import Pojos.CreateUserResponse;
+import com.google.gson.Gson;
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
+import static org.junit.Assert.assertEquals;
 
 public class UserSettings {
 
@@ -25,21 +28,25 @@ public class UserSettings {
                 .when().post()
                 .then().statusCode(statusCode);
     }
-    public void getUser(String username){
-        given()
+    public CreateUserResponse getUser(String username){
+        Response rs = given()
                 .baseUri(baseUrl)
                 .basePath("/user/" + username)
                 .contentType(ContentType.JSON)
-                .when().get()
-                .then().statusCode(200);
+                .when().get();
+
+        CreateUserResponse targetObject = new Gson().fromJson(rs.getBody().asString(), CreateUserResponse.class);
+    return targetObject;
     }
 
-    public void getUser(String username, Integer statusCode){
-        given()
+    public CreateUserResponse getUser(String username, int statusCode){
+        Response rs = given()
                 .baseUri(baseUrl)
                 .basePath("/user/" + username)
                 .contentType(ContentType.JSON)
-                .when().get()
-                .then().statusCode(statusCode);
+                .when().get();
+        assertEquals(rs.getStatusCode(),statusCode);
+        CreateUserResponse targetObject = new Gson().fromJson(rs.getBody().asString(), CreateUserResponse.class);
+    return targetObject;
     }
 }

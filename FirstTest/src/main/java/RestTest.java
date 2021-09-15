@@ -1,8 +1,11 @@
 import Pojos.CreateUser;
 import Pojos.CreateUserResponse;
+import com.google.gson.Gson;
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
+import static org.junit.Assert.assertEquals;
 
 public class RestTest {
     @Test
@@ -21,17 +24,8 @@ public class RestTest {
 
         UserSettings st = new UserSettings();
         st.createUser(rq);
-        CreateUserResponse rs = given()
-                .baseUri("https://petstore.swagger.io/v2")
-                .basePath("/user/AhalaiMahalai")
-                .contentType(ContentType.JSON)
-                .when().get()
-                .then().statusCode(200)
-                .extract().as(CreateUserResponse.class);
-
-        //st.getUser(rq.getUsername(), 200);
-        //CreateUser targetObject = new Gson().fromJson(rq.toString(), CreateUser.class);
-        //assertEquals(targetObject.getUsername(), "AhalaiMahalai");
+        CreateUserResponse createUserResponse = st.getUser(rq.getUsername(), 200);
+        assertEquals(createUserResponse.hashCode(), rq.hashCode());
     }
     @Test
     public void createUserNegative(){

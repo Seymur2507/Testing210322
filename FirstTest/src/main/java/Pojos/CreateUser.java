@@ -1,7 +1,6 @@
 package Pojos;
 
 import lombok.*;
-import org.junit.Ignore;
 
 @Data
 @Builder

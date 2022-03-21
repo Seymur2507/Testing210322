@@ -1,3 +1,5 @@
+package Page;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,6 +22,7 @@ public class SitePage {
 
     //Тык на вкладку логина
     public void clickLoginBtn() {loginBtn.click();}
+
     //Тык на вкладку личного кабинета
     public void clickprofileLink() {
         profileDropTab.click();

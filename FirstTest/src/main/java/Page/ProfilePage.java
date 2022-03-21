@@ -1,3 +1,5 @@
+package Page;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,7 +11,7 @@ public class ProfilePage {
         PageFactory.initElements(driver, this);
         this.driver = driver; }
 
-    @FindBy(xpath = "//input[@name=\"name\"]")
+    @FindBy(xpath = "/html/body/div[3]/div[1]/div/div[2]/form/table/tbody/tr[2]/td[2]/input")
     private WebElement username;
 
     @FindBy(xpath = "//*[@id=\"fat-menu\"]/a")
@@ -20,7 +22,7 @@ public class ProfilePage {
 
     //Получение юзернейма из профиля
     public String getUserName() {
-        String userName = username.getText();
+        String userName = username.getAttribute("value");
         return userName; }
 
     //Выход из профиля

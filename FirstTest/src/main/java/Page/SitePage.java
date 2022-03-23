@@ -21,7 +21,8 @@ public class SitePage {
     private WebElement profileLink;
 
     //Тык на вкладку логина
-    public void clickLoginBtn() {loginBtn.click();}
+    public void clickLoginBtn() {
+        loginBtn.click();}
 
     //Тык на вкладку личного кабинета
     public void clickprofileLink() {

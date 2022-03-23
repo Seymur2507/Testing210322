@@ -1,6 +1,9 @@
-
+import Page.LoginPage;
+import Page.ProfilePage;
+import Page.SitePage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -21,9 +24,12 @@ public class TestIngGroup {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    /*
-    @Test
-    public void inputAvatar (){
+
+    @ParameterizedTest
+    @CsvSource(value = {
+            "Testing123@mail.ru, Testing123"
+    }) //true чтобы пропускал пробелы
+    public void LoginCheck(String mail, String pas){
         LoginPage loginpage = new LoginPage(driver);
         ProfilePage profilepage = new ProfilePage(driver);
         SitePage sitepage = new SitePage(driver);
@@ -33,10 +39,12 @@ public class TestIngGroup {
         loginpage.AuthClick();
         sitepage.clickprofileLink();
         profilepage.avatarInput();
+        String user = profilepage.getUserName();
+        Assertions.assertEquals("Сейм", user);
         profilepage.clickLogoutLink();
     }
-*/
 
+/*
     @ParameterizedTest
     @CsvSource(value = {
             "Testing123@mail.ru, Testing123"
@@ -54,7 +62,7 @@ public class TestIngGroup {
         Assertions.assertEquals("Сейм", user);
         profilepage.clickLogoutLink();
     }
-
+    */
     @AfterAll
         public void Shutdown(){
         driver.quit();

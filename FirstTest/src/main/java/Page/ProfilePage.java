@@ -22,7 +22,7 @@ public class ProfilePage {
     @FindBy(xpath = "//*[@id=\"fat-menu\"]/ul/li[3]/a")
     private WebElement profileExitBtn;
 
-    @FindBy(xpath = "//input[name='avatar']")
+    @FindBy(name="avatar")
     private WebElement profileAvatar;
 
     //загрузка аватара

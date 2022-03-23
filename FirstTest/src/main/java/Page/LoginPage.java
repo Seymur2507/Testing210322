@@ -26,4 +26,7 @@ public class LoginPage {
     public void inputPassword(String password) {passwordInput.sendKeys(password);}
     //Клик логина
     public void AuthClick() {AuthBtn.click();}
+
+
+
 }

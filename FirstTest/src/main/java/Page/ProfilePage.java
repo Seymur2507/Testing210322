@@ -25,11 +25,20 @@ public class ProfilePage {
     @FindBy(name="avatar")
     private WebElement profileAvatar;
 
+    @FindBy(name="act_profile_now")
+    private WebElement saveProfileButton;
+
+
     //загрузка аватара
     public void avatarInput() {
     String filePath = "FirstTest/src/FileForUpload/scale_1200.jpg";
     profileAvatar.sendKeys(filePath);
     System.out.println("File is Uploaded Successfully");
+    }
+
+    //Сохранить настройки профиля
+    public void saveProfile(){
+        saveProfileButton.click();
     }
 
     //Получение юзернейма из профиля

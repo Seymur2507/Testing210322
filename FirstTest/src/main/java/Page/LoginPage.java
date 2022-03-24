@@ -40,11 +40,11 @@ public class LoginPage {
     private WebElement RegBtn;
 
     //Регистрация - ввод имени
-    public void RegInputName(String name) {RegNameInput.sendKeys(name);}
+    public void RegInputNamec(String name) {RegNameInput.sendKeys(name);}
     //Регистрация - ввод мыла
-    public void RegInputEmail(String email) {RegEmailInput.sendKeys(email);}
+    public void RegInputEmailc(String email) {RegEmailInput.sendKeys(email);}
     //Регистрация - ввод пароля
-    public void RegInputPassword(String password) {ReqPasswordInput.sendKeys(password);}
+    public void RegInputPasswordc(String password) {ReqPasswordInput.sendKeys(password);}
     //Клик логина
     public void RegClick() {RegBtn.click();}
 

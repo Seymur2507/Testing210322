@@ -18,9 +18,9 @@ public class Register {
         LoginPage loginpage = new LoginPage(driver);
         SitePage sitepage = new SitePage(driver);
         sitepage.clickLoginBtn();
-        loginpage.RegInputName("Сейм");
-        loginpage.RegInputEmail("Testing123@mail.ru");
-        loginpage.RegInputPassword("Testing123");
+        loginpage.RegInputNamec("Сейм");
+        loginpage.RegInputEmailc("Testing123@mail.ru");
+        loginpage.RegInputPasswordc("Testing123");
         loginpage.RegClick();
     }
 }

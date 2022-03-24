@@ -41,6 +41,7 @@ public class TestIngGroup {
         profilepage.avatarInput();
         String user = profilepage.getUserName();
         Assertions.assertEquals("Сейм", user);
+        profilepage.saveProfile();
         profilepage.clickLogoutLink();
     }
 

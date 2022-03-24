@@ -27,7 +27,7 @@ public class ProfilePage {
 
     //загрузка аватара
     public void avatarInput() {
-    String filePath = "https://www.anypics.ru/download.php?file=201210/1280x1024/anypics.ru-6881.jpg";
+    String filePath = "FirstTest/src/FileForUpload/scale_1200.jpg";
     profileAvatar.sendKeys(filePath);
     System.out.println("File is Uploaded Successfully");
     }

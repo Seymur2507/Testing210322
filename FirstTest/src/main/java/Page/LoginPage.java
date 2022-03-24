@@ -27,6 +27,25 @@ public class LoginPage {
     //Клик логина
     public void AuthClick() {AuthBtn.click();}
 
+    @FindBy(name = "name")
+    private WebElement RegNameInput;
 
+    @FindBy(name = "email")
+    private WebElement RegEmailInput;
+
+    @FindBy(name = "password")
+    private WebElement ReqPasswordInput;
+
+    @FindBy(name = "act_register_now")
+    private WebElement RegBtn;
+
+    //Регистрация - ввод имени
+    public void RegInputName(String name) {RegNameInput.sendKeys(name);}
+    //Регистрация - ввод мыла
+    public void RegInputEmail(String email) {RegEmailInput.sendKeys(email);}
+    //Регистрация - ввод пароля
+    public void RegInputPassword(String password) {ReqPasswordInput.sendKeys(password);}
+    //Клик логина
+    public void RegClick() {RegBtn.click();}
 
 }

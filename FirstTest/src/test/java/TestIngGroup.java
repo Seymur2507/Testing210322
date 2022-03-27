@@ -24,7 +24,7 @@ public class TestIngGroup {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-
+//тестовый  комментарий для git
     @ParameterizedTest
     @CsvSource(value = {
             "Testing123@mail.ru, Testing123"

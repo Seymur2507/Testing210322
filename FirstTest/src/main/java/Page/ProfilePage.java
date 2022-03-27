@@ -7,9 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ProfilePage {
     public WebDriver driver;
+
     public ProfilePage(WebDriver driver) {
         PageFactory.initElements(driver, this);
-        this.driver = driver; }
+        this.driver = driver;
+    }
 
     @FindBy(xpath = "/html/body/div[3]/div[1]/div/div[2]/form/table/tbody/tr[2]/td[2]/input")
     private WebElement username;
@@ -19,6 +21,25 @@ public class ProfilePage {
 
     @FindBy(xpath = "//*[@id=\"fat-menu\"]/ul/li[3]/a")
     private WebElement profileExitBtn;
+
+    @FindBy(name="avatar")
+    private WebElement profileAvatar;
+
+    @FindBy(name="act_profile_now")
+    private WebElement saveProfileButton;
+
+
+    //загрузка аватара
+    public void avatarInput() {
+    String filePath = "FirstTest/src/FileForUpload/scale_1200.jpg";
+    profileAvatar.sendKeys(filePath);
+    System.out.println("File is Uploaded Successfully");
+    }
+
+    //Сохранить настройки профиля
+    public void saveProfile(){
+        saveProfileButton.click();
+    }
 
     //Получение юзернейма из профиля
     public String getUserName() {

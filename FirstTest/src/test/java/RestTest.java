@@ -1,11 +1,7 @@
 import Pojos.CreateUser;
 import Pojos.CreateUserResponse;
-import com.google.gson.Gson;
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
-import static io.restassured.RestAssured.given;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RestTest {
     @Test
@@ -13,12 +9,12 @@ public class RestTest {
         CreateUser rq =
                 CreateUser.builder()
         .id(0)
-        .username("AhalaiMahalai")
-        .firstName("Daniil")
-        .lastName("Malkov")
-        .email("tester123@mail.ru")
+        .username("SEM1")
+        .firstName("SEm")
+        .lastName("Akc")
+        .email("tester@mail.ru")
         .password("123")
-        .phone("88005553535")
+        .phone("83915555555")
         .userStatus(0)
         .build();
 
@@ -31,12 +27,12 @@ public class RestTest {
     public void createUserNegative(){
         CreateUser rq =
                 CreateUser.builder()
-                        .username("AhalaiMahalai")
-                        .firstName("Daniil")
-                        .lastName("Malkov")
-                        .email("tester123@mail.ru")
+                        .username("SEM1")
+                        .firstName("SEM")
+                        .lastName("Akc")
+                        .email("tester@mail.ru")
                         .password("123")
-                        .phone("88005553535")
+                        .phone("89315555555")
                         .build();
 
         UserSettings st = new UserSettings();

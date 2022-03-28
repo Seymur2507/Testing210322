@@ -14,15 +14,22 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.concurrent.TimeUnit;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class TestIngGroup {
+public class TestProfileName {
     public WebDriver driver;
+
     @BeforeAll
-    public void Setup(){
+    public void Setup() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get("http://users.bugred.ru/");
-        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
+
+    @AfterAll
+    public void Shutdown() {
+        driver.quit();
+    }
+
 /*
 //тестовый  комментарий для git
     @ParameterizedTest
@@ -48,9 +55,11 @@ public class TestIngGroup {
 
     @ParameterizedTest
     @CsvSource(value = {
+            "Testing123@mail.ru, Testing123",
+            "Testing1234@mail.ru, Testing123",
             "Testing123@mail.ru, Testing123"
     }) //true чтобы пропускал пробелы
-    public void LoginCheck(String mail, String pas){
+    public void LoginCheck(String mail, String pas) {
         LoginPage loginpage = new LoginPage(driver);
         ProfilePage profilepage = new ProfilePage(driver);
         SitePage sitepage = new SitePage(driver);
@@ -62,10 +71,5 @@ public class TestIngGroup {
         String user = profilepage.getUserName();
         Assertions.assertEquals("Сейм", user);
         profilepage.clickLogoutLink();
-    }
-
-    @AfterAll
-        public void Shutdown(){
-        driver.quit();
     }
 }

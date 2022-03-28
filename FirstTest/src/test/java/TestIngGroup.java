@@ -21,9 +21,9 @@ public class TestIngGroup {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get("http://users.bugred.ru/");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
     }
-
+/*
 //тестовый  комментарий для git
     @ParameterizedTest
     @CsvSource(value = {
@@ -44,8 +44,8 @@ public class TestIngGroup {
         profilepage.saveProfile();
         profilepage.clickLogoutLink();
     }
+*/
 
-/*
     @ParameterizedTest
     @CsvSource(value = {
             "Testing123@mail.ru, Testing123"
@@ -63,7 +63,7 @@ public class TestIngGroup {
         Assertions.assertEquals("Сейм", user);
         profilepage.clickLogoutLink();
     }
-    */
+
     @AfterAll
         public void Shutdown(){
         driver.quit();

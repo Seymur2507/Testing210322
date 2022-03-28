@@ -27,6 +27,7 @@ public class LoginPage {
     //Клик логина
     public void AuthClick() {AuthBtn.click();}
 
+    //--------------------------------------регистрация перед тестами-------------------------------------
     @FindBy(name = "name")
     private WebElement RegNameInput;
 

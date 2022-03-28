@@ -7,10 +7,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class Register {
+public class TestRegister {
     public WebDriver driver;
+
     @Test
-    public void Register(){
+    public void  Register(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get("http://users.bugred.ru/");
@@ -22,5 +23,6 @@ public class Register {
         loginpage.RegInputEmailc("Testing123@mail.ru");
         loginpage.RegInputPasswordc("Testing123");
         loginpage.RegClick();
+        driver.quit();
     }
 }

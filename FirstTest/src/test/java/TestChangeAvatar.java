@@ -21,7 +21,8 @@ import org.junit.jupiter.params.provider.CsvSource;
             loginpage.inputPassword(pas);
             loginpage.AuthClick();
             sitepage.clickprofileLink();
-            profilepage.avatarInput(driver);
+
+            profilepage.avatarInput();
             System.out.println("File is Uploaded Successfully");
         }
 }

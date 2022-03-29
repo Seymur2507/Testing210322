@@ -31,10 +31,9 @@ public class ProfilePage {
 
     //загрузка аватара
     public void avatarInput() {
-
         profileAvatar.click();
         //profileAvatar.sendKeys("C:/fakepath/chili-patagoniya-priroda-gory-skaly-sneg-nebo.jpg");
-        System.out.println("File is Uploaded Successfully");
+        //System.out.println("File is Uploaded Successfully");
     }
 
     //Сохранить настройки профиля

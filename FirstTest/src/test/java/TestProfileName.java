@@ -14,7 +14,7 @@ public class TestProfileName extends TestBase{
     @ParameterizedTest
     @CsvSource(value = {
             "Testing123@mail.ru, Testing123",
-            "Testing1234@mail.ru, Testing123",
+            "Testing1234@mail.ru, Testing123",/*задумано*/
             "Testing123@mail.ru, Testing123"
     }) //true чтобы пропускал пробелы
     public void LoginCheck(String mail, String pas) {
@@ -29,5 +29,22 @@ public class TestProfileName extends TestBase{
         String user = profilepage.getUserName();
         Assertions.assertEquals("Сейм", user);
         profilepage.clickLogoutLink();
+    }
+
+    //Негативный тест на авторизаацию
+    @ParameterizedTest
+    @CsvSource(value = {
+            "Testing1234@mail.ru, Testing123"
+    })
+    public void LoginCheckNeg(String mail, String pas) {
+        LoginPage loginpage = new LoginPage(driver);
+        ProfilePage profilepage = new ProfilePage(driver);
+        SitePage sitepage = new SitePage(driver);
+        sitepage.clickLoginBtn();
+        loginpage.inputEmail(mail);
+        loginpage.inputPassword(pas);
+        loginpage.AuthClick();
+        String urlBase = driver.getCurrentUrl();
+        Assertions.assertEquals("http://users.bugred.ru/user/login/index.html", urlBase);
     }
 }

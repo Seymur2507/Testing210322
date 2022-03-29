@@ -1,2 +1,2 @@
-public class CheckProfilePage_ask {
+public class CheckProfilePage_ask extends TestBase{
 }

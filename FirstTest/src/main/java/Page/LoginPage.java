@@ -34,7 +34,7 @@ public class LoginPage {
     @FindBy(name = "email")
     private WebElement RegEmailInput;
 
-    @FindBy(name = "password")
+    @FindBy(xpath = "/html/body/div[3]/div[1]/div[2]/form/table/tbody/tr[3]/td[2]/input")
     private WebElement ReqPasswordInput;
 
     @FindBy(name = "act_register_now")

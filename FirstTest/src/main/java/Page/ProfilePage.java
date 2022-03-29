@@ -22,7 +22,7 @@ public class ProfilePage {
     @FindBy(xpath = "//*[@id=\"fat-menu\"]/ul/li[3]/a")
     private WebElement profileExitBtn;
 
-    @FindBy(name="avatar")
+    @FindBy(xpath="/html/body/div[3]/div[1]/div/div[2]/form/table/tbody/tr[1]/td[2]/input")
     private WebElement profileAvatar;
 
     @FindBy(name="act_profile_now")
@@ -33,7 +33,7 @@ public class ProfilePage {
     public void avatarInput() {
 
         profileAvatar.click();
-        profileAvatar.sendKeys("C:/fakepath/chili-patagoniya-priroda-gory-skaly-sneg-nebo.jpg");
+        //profileAvatar.sendKeys("C:/fakepath/chili-patagoniya-priroda-gory-skaly-sneg-nebo.jpg");
         System.out.println("File is Uploaded Successfully");
     }
 

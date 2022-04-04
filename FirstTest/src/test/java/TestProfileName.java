@@ -9,7 +9,6 @@ import org.junit.jupiter.params.provider.CsvSource;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TestProfileName extends TestBase{
 
-
 //сквозной тест на проверку коректности имени в профиле
     @ParameterizedTest
     @CsvSource(value = {
